@@ -1,78 +1,82 @@
 <html>
 <head>
 <title>Ciudadanos de 4 patas</title>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="js/loadData.js" type="text/javascript"></script>
 </head>
+  <style>
+    table, th, td{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
 <body>
 <h1>Bienvenido al administrador de mascotas</h1>
-<h3>La info esta desactualizada?</h3>
-<form action="Yes">
-<label>Microchip:</label>
-<input type="text" name="Microchip" required>
-<br/>
-<label>Species:</label>
-<input type="text" name="Species" required>
-<br/>
-<label>Sex:</label>
-<input type="text" name="Sex" required>
-<br/>
-<label>Size:</label>
-<input type="text" name="Size" required>
-<br/>
-<label>Potentially Dangerous:</label>
-<select name="danger" required>
-<option value=""></option>
-<option value="yes">Yes</option>
-<option value="no">No</option>
-</select>
-<br/>
-<label>Neighborhood:</label>
-<input type="text" name="Neighborhood" required>
-<br/>
-<label>Owner:</label>
-<input type="text" name="Owner" required>
-<br/>
-<label>Addres:</label>
-<input type="text" name="Addres" required>
-<br/>
-<label>Picture:</label>
-<input type="file" name="Picture" accept="image/*" required>
-<br/>
-<input type="submit" value="Actualizar">
 <h3>No encuentras a tu mascota?</h3>
-<form action="Yes">
+<form>
 <label>Microchip:</label>
-<input type="text" name="Microchip" required>
+<input type="text" id="Microchip" required>
 <br/>
 <label>Species:</label>
-<input type="text" name="Species" required>
+<input type="text" id="Species" required>
 <br/>
 <label>Sex:</label>
-<input type="text" name="Sex" required>
+<input type="text" id="Sex" required>
 <br/>
 <label>Size:</label>
-<input type="text" name="Size" required>
+<input type="text" id="Size" required>
 <br/>
 <label>Potentially Dangerous:</label>
-<select name="danger" required>
+<select id="danger" required>
 <option value=""></option>
 <option value="yes">Yes</option>
 <option value="no">No</option>
 </select>
 <br/>
 <label>Neighborhood:</label>
-<input type="text" name="Neighborhood" required>
+<input type="text" id="Neighborhood" required>
 <br/>
 <label>Owner:</label>
-<input type="text" name="Owner" required>
+<input type="text" id="Owner" required>
 <br/>
 <label>Addres:</label>
-<input type="text" name="Addres" required>
+<input type="text" id="Addres" required>
 <br/>
 <label>Picture:</label>
-<input type="file" name="Picture" accept="image/*" required>
+<input type="file" id="Picture" accept="image/*" required>
 <br/>
-<input type="submit" value="Agregar">
+<button type="button" onclick="check()">Crear</button>
 </form>
-</form>
+<h3>Busca a tu mascota</h3>
+<label>Escribe el valor que quieres filtrar</label>
+<input type="text" id="value" required>
+<button type="button" onclick="search()">Buscar</button>
+<br/>
+<button type="button" onclick="generateT()">Clear Table</button>
+  <button type="button" onclick="first()">First Page</button>
+  <button type="button" onclick="past()">Last Page</button>
+  <button type="button" onclick="next()">Next Page</button>
+  <button type="button" onclick="last()">Final Page</button>
+   <table id="table">
+   <tr>
+     <th>
+      Microchip
+     </th>
+     <th>
+     Neighborhood
+      </th>
+     <th>
+     Potentally Dangerous
+     </th>
+     <th>
+     Size
+     </th>
+     <th>
+     Sex
+     </th>
+     <th>
+     Species
+   </tr>
+ </table>
 </body>
 </html>
